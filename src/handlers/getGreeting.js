@@ -3,7 +3,7 @@ const { generateGreeting } = require('../services/greetingService');
 exports.greeting = async (event) => {
   console.info('Event Received', JSON.stringify(event, null, 2));
 
-  let name = event?.queryStringParameters?.name || 'Usuario desconocido';
+  let name = event?.queryStringParameters?.name;
 
   const { html, statusCode } = generateGreeting(name);
 

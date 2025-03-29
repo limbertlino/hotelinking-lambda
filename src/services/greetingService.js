@@ -1,8 +1,7 @@
-const generateGreeting = (name) => {
+const generateGreeting = (name = 'Usuario desconocido') => {
   let time = new Date().toLocaleTimeString('es-ES', {
     hour12: false,
   });
-
 
   return {
     html: `<html>
