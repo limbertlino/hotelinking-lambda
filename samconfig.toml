@@ -1,8 +1,8 @@
 version = 0.1
 [default.deploy.parameters]
-stack_name = "hotelinking-lambda"
+stack_name = "hotelinking-greeting"
 resolve_s3 = true
-s3_prefix = "hotelinking-lambda"
+s3_prefix = "hotelinking-greeting"
 region = "us-east-1"
 confirm_changeset = true
 capabilities = "CAPABILITY_IAM"
