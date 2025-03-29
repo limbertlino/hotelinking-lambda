@@ -10,11 +10,11 @@ Resources:
     Type: 'AWS::Serverless::Function'
     Properties:
       Description: Función Lambda que genera un saludo HTML personalizado junto a la hora actual
-      Handler: getGreeting.greeting
+      Handler: handlers/getGreeting.greeting
       Runtime: nodejs22.x
       MemorySize: 128
       Timeout: 3
-      CodeUri: ./src/handlers
+      CodeUri: ./src
       Events:
         Api:
           Type: Api
