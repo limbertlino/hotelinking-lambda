@@ -1,4 +1,6 @@
-const generateGreeting = (name = 'Usuario desconocido') => {
+const generateGreeting = (name) => {
+  if (!name) name = 'Usuario desconocido';
+
   let time = new Date().toLocaleTimeString('es-ES', {
     hour12: false,
   });
