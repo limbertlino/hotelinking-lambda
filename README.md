@@ -44,10 +44,9 @@ sam deploy
 
 ## Uso
 
-Puedes acceder a la API a través de la siguiente URL pública:
+Puedes acceder a la API a través de una url como esta:
 
-https://3kdf56lhz4.execute-api.us-east-1.amazonaws.com/Prod/greeting?name=jose
-
+https://<ID_DEL_API>.execute-api.<REGION>.amazonaws.com/Prod/greeting?name=<NOMBRE>
 
 Reemplaza `jose` en el parámetro `name` por cualquier otro nombre para obtener un saludo personalizado. Si no se proporciona un nombre, la respuesta será "Usuario desconocido".
 
