@@ -1,0 +1,31 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: >-
+  Servicio web Lambda que devuelve un saludo personalizado con la hora actual.
+  Expone un endpoint API Gateway que acepta un parámetro 'name' en la query string.
+Transform:
+  - AWS::Serverless-2016-10-31
+
+Resources:
+  GreetingFunction:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Description: Función Lambda que genera un saludo HTML personalizado junto a la hora actual
+      Handler: getGreeting.greeting
+      Runtime: nodejs22.x
+      MemorySize: 128
+      Timeout: 3
+      CodeUri: ./src/handlers
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /greeting
+            Method: GET
+
+Outputs:
+  GreetingApiUrl:
+    Description: API Gateway endpoint URL for Prod stage
+    Value: !Sub 'https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/greeting'
+  GreetingFunctionArn:
+    Description: ARN de la función Lambda
+    Value: !GetAtt GreetingFunction.Arn
